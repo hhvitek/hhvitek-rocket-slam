@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce007b8cc0b047db5b0a48ee3bf5bf92, type: 3}
+  m_Name: Level02
+  m_EditorClassIdentifier: RocketSlam::RocketSlam.Rocket.LevelConfig
+  number: 2
+  displayName: Crosswind
+  briefing: A steady crosswind pushes you sideways. The rocket leans into it.
+  conditions: Crosswind 9 m/s with light gusts.
+  site: 0
+  fuelKg: 9000
+  startAltitude: 3000
+  startVerticalSpeed: -220
+  startOffset: {x: -70, y: 50}
+  startHorizontalVelocity: {x: 0, y: 0}
+  twoStarScore: 640
+  threeStarScore: 780
+  wind:
+    steady: {x: 9, y: 3}
+    gustStrength: 2
+    gustFrequency: 0.07
+    seed: 2
+  sea:
+    swellAmplitude: 0
+    swellPeriod: 0
+    swellDirection: 0
+    chopAmplitude: 0
+    seed: 0
+  timeOfDay: 0
+  fogDensity: 0.00013
+  skyRotation: 205

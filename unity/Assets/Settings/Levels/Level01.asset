@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce007b8cc0b047db5b0a48ee3bf5bf92, type: 3}
+  m_Name: Level01
+  m_EditorClassIdentifier: RocketSlam::RocketSlam.Rocket.LevelConfig
+  number: 1
+  displayName: Ground pad
+  briefing: Calm day. Land softly on the pad.
+  conditions: Calm air, clear day.
+  site: 0
+  fuelKg: 10000
+  startAltitude: 3000
+  startVerticalSpeed: -225
+  startOffset: {x: 60, y: -40}
+  startHorizontalVelocity: {x: 0, y: 0}
+  twoStarScore: 650
+  threeStarScore: 795
+  wind:
+    steady: {x: 0, y: 0}
+    gustStrength: 0
+    gustFrequency: 0
+    seed: 0
+  sea:
+    swellAmplitude: 0
+    swellPeriod: 0
+    swellDirection: 0
+    chopAmplitude: 0
+    seed: 0
+  timeOfDay: 0
+  fogDensity: 0.000105
+  skyRotation: 75

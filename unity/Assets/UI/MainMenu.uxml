@@ -1,0 +1,40 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements">
+    <Style src="Menu.uss" />
+    <ui:VisualElement name="menu-root" class="menu-root">
+        <ui:VisualElement name="screen-main" class="screen main-screen">
+            <ui:VisualElement class="main-panel">
+                <ui:Label text="ROCKET" class="game-title" />
+                <ui:Label text="SLAM" class="game-title game-title-2" />
+                <ui:Label text="Bring the booster home. Softly." class="game-tagline" />
+                <ui:VisualElement class="menu-list">
+                    <ui:VisualElement name="btn-play" class="menu-button play-button">
+                        <ui:Label text="PLAY" class="menu-button-text" />
+                        <ui:Label name="play-sub" text="Level 1 - Ground pad" class="menu-button-sub" />
+                    </ui:VisualElement>
+                    <ui:VisualElement name="btn-levels" class="menu-button">
+                        <ui:Label text="LEVEL SELECT" class="menu-button-text" />
+                    </ui:VisualElement>
+                    <ui:VisualElement name="btn-settings" class="menu-button">
+                        <ui:Label text="SETTINGS" class="menu-button-text" />
+                    </ui:VisualElement>
+                    <ui:VisualElement name="btn-quit" class="menu-button">
+                        <ui:Label text="QUIT" class="menu-button-text" />
+                    </ui:VisualElement>
+                </ui:VisualElement>
+                <ui:VisualElement name="progress-row" class="progress-row">
+                    <ui:VisualElement name="progress-star" class="progress-star" />
+                    <ui:Label name="progress-text" text="0 / 15 stars" class="progress-text" />
+                </ui:VisualElement>
+                <ui:Label text="Arrows / mouse  ·  Enter select  ·  Esc back" class="menu-hint" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+
+        <ui:VisualElement name="screen-levels" class="screen levels-screen">
+            <ui:Label text="SELECT LEVEL" class="screen-title levels-title" />
+            <ui:VisualElement name="level-cards" class="level-cards" />
+            <ui:Label name="levels-hint" text="Arrows choose  ·  Enter fly  ·  Esc back" class="menu-hint levels-hint" />
+        </ui:VisualElement>
+
+        <ui:VisualElement name="settings-host" class="screen settings-host" />
+    </ui:VisualElement>
+</ui:UXML>

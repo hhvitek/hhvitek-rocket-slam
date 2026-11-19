@@ -1,0 +1,270 @@
+.root {
+    flex-grow: 1;
+    position: absolute;
+    left: 0; top: 0; right: 0; bottom: 0;
+    color: rgb(235, 240, 245);
+    font-size: 22px;
+}
+
+.panel {
+    position: absolute;
+    background-color: rgba(10, 14, 20, 0.62);
+    border-radius: 8px;
+    padding: 12px 16px;
+    border-width: 1px;
+    border-color: rgba(255, 255, 255, 0.15);
+}
+
+.panel-title {
+    font-size: 15px;
+    color: rgb(140, 160, 180);
+    letter-spacing: 2px;
+    margin-bottom: 6px;
+    -unity-font-style: bold;
+}
+
+.telemetry { left: 24px; top: 24px; width: 300px; }
+.engine { right: 24px; top: 24px; width: 280px; }
+.target { left: 24px; bottom: 64px; width: 170px; align-items: center; }
+
+.row {
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 2px 0;
+}
+
+.key { color: rgb(160, 175, 190); }
+.value { -unity-font-style: bold; -unity-text-align: middle-right; }
+.warn { color: rgb(255, 190, 60); }
+.danger { color: rgb(255, 90, 80); }
+.good { color: rgb(110, 230, 120); }
+
+.engine-state {
+    font-size: 30px;
+    -unity-font-style: bold;
+    margin-bottom: 4px;
+    color: rgb(140, 150, 160);
+}
+.engine-state.on { color: rgb(255, 160, 40); }
+
+.bar {
+    height: 10px;
+    background-color: rgba(255, 255, 255, 0.12);
+    border-radius: 3px;
+    margin: 2px 0 8px 0;
+    overflow: hidden;
+}
+.bar-fill { height: 100%; width: 50%; border-radius: 3px; }
+.throttle-fill { background-color: rgb(255, 160, 40); }
+.fuel-fill { background-color: rgb(80, 180, 255); }
+
+.compass {
+    width: 96px;
+    height: 96px;
+    border-radius: 48px;
+    border-width: 2px;
+    border-color: rgba(255, 255, 255, 0.5);
+    background-color: rgba(255, 255, 255, 0.05);
+    margin: 4px 0;
+}
+.needle {
+    position: absolute;
+    left: 45px;
+    top: 8px;
+    width: 4px;
+    height: 40px;
+    background-color: rgb(255, 210, 60);
+    border-radius: 2px;
+    transform-origin: 50% 100%;
+}
+.compass-dot {
+    position: absolute;
+    left: 42px;
+    top: 42px;
+    width: 10px;
+    height: 10px;
+    border-radius: 5px;
+    background-color: rgb(235, 240, 245);
+}
+.target-dist { font-size: 24px; -unity-font-style: bold; }
+
+.help {
+    position: absolute;
+    bottom: 16px;
+    left: 0; right: 0;
+    -unity-text-align: middle-center;
+    font-size: 20px;
+    color: rgba(235, 240, 245, 0.9);
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.9);
+}
+
+.overlay {
+    position: absolute;
+    left: 0; top: 0; right: 0; bottom: 0;
+    align-items: center;
+    justify-content: center;
+    display: none;
+}
+.overlay.visible { display: flex; }
+/* Result sits low (above the key hints) so the pad and an explosion above it stay visible. */
+.result-overlay { justify-content: flex-end; padding-bottom: 90px; }
+
+.overlay-box {
+    background-color: rgba(10, 14, 20, 0.82);
+    border-radius: 12px;
+    padding: 28px 48px;
+    align-items: center;
+    border-width: 2px;
+    border-color: rgba(255, 255, 255, 0.2);
+}
+.result-title { font-size: 56px; -unity-font-style: bold; }
+.result-title.good { color: rgb(110, 230, 120); }
+.result-title.danger { color: rgb(255, 90, 80); }
+.result-reason { font-size: 26px; margin-top: 8px; }
+.result-hint { font-size: 20px; margin-top: 16px; color: rgb(160, 175, 190); }
+
+.pad-marker { position: absolute; width: 0; height: 0; overflow: visible; }
+.pad-ring {
+    position: absolute; left: -22px; top: -22px; width: 44px; height: 44px;
+    border-radius: 22px; border-width: 3px; border-color: rgb(255, 210, 60);
+}
+.pad-label {
+    position: absolute; left: -60px; top: 24px; width: 120px;
+    -unity-text-align: upper-center; font-size: 18px; -unity-font-style: bold;
+    color: rgb(255, 210, 60); text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+}
+.pad-arrow { position: absolute; width: 0; height: 0; overflow: visible; }
+.pad-chevron {
+    position: absolute; left: -14px; top: -14px; width: 28px; height: 28px;
+    border-top-width: 6px; border-right-width: 6px; border-color: rgb(255, 210, 60);
+    rotate: 45deg;
+}
+.impact-marker {
+    position: absolute; width: 32px; height: 32px; translate: -50% -50%;
+    border-radius: 16px; border-width: 2px; border-color: rgb(90, 220, 255);
+    align-items: center; justify-content: center;
+}
+.impact-marker.on-pad { border-color: rgb(110, 230, 120); }
+.impact-dot { width: 6px; height: 6px; border-radius: 3px; background-color: rgb(90, 220, 255); }
+.impact-marker.on-pad .impact-dot { background-color: rgb(110, 230, 120); }
+.cam-name {
+    position: absolute; top: 76px; left: 0; right: 0;
+    -unity-text-align: middle-center; font-size: 26px; -unity-font-style: bold;
+    color: rgb(235, 240, 245); text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.9);
+    display: none;
+}
+.cam-name.visible { display: flex; }
+
+.steer { right: 24px; bottom: 64px; width: 150px; align-items: center; }
+.steer-box {
+    width: 96px; height: 96px; border-width: 2px; border-color: rgba(255, 255, 255, 0.5);
+    border-radius: 6px; background-color: rgba(255, 255, 255, 0.05); margin: 4px 0;
+}
+.steer-h { position: absolute; left: 0; right: 0; top: 46px; height: 1px; background-color: rgba(255, 255, 255, 0.3); }
+.steer-v { position: absolute; top: 0; bottom: 0; left: 46px; width: 1px; background-color: rgba(255, 255, 255, 0.3); }
+.steer-dot {
+    position: absolute; width: 16px; height: 16px; border-radius: 8px;
+    background-color: rgb(140, 150, 160); translate: -50% -50%; left: 50%; top: 50%;
+}
+.steer-dot.active { background-color: rgb(90, 220, 255); }
+.steer-source { font-size: 15px; color: rgb(160, 175, 190); -unity-text-align: middle-center; }
+
+/* ---- modes: the root gets mode-easy or mode-manual ---- */
+.mode-easy .manual-only { display: none; }
+.mode-manual .easy-only { display: none; }
+
+.mode-pill {
+    position: absolute; top: 20px; left: 50%; translate: -50% 0;
+    padding: 6px 20px; border-radius: 18px;
+    background-color: rgba(10, 14, 20, 0.62); border-width: 1px; border-color: rgba(255, 255, 255, 0.2);
+    font-size: 22px; -unity-font-style: bold; letter-spacing: 2px; color: rgb(110, 230, 120);
+}
+.mode-manual .mode-pill { color: rgb(255, 190, 60); }
+
+/* ---- Easy HUD: few, big numbers ---- */
+.easy-panel { left: 24px; top: 24px; width: 360px; padding: 16px 22px; }
+.big-key { font-size: 22px; color: rgb(160, 175, 190); -unity-font-style: bold; letter-spacing: 1px; }
+.big-value { font-size: 44px; -unity-font-style: bold; margin-bottom: 8px; }
+.huge-value { font-size: 64px; -unity-font-style: bold; }
+.small-note { font-size: 18px; color: rgb(160, 175, 190); margin-bottom: 10px; }
+.fuel-row { margin-top: 4px; }
+.fuel-pct { color: rgb(235, 240, 245); }
+.big-bar { height: 18px; border-radius: 5px; }
+
+.controls-box { right: 24px; top: 24px; width: 400px; padding: 14px 20px; }
+.ctl-row { flex-direction: row; margin: 2px 0; align-items: center; }
+.ctl-key { width: 185px; font-size: 22px; -unity-font-style: bold; color: rgb(255, 210, 60); }
+.ctl { font-size: 22px; color: rgb(215, 222, 230); }
+.ctl-main { font-size: 24px; -unity-font-style: bold; color: rgb(255, 210, 60); }
+
+/* ---- burn cue: big, centred above the rocket ---- */
+.cue {
+    position: absolute; top: 33%; left: 0; right: 0;
+    align-items: center;
+}
+.cue-main {
+    font-size: 64px; -unity-font-style: bold; color: rgb(235, 240, 245);
+    padding: 6px 34px; border-radius: 14px;
+    background-color: rgba(10, 14, 20, 0.66);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9);
+}
+.cue-sub {
+    font-size: 30px; margin-top: 8px; color: rgb(235, 240, 245);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.95);
+}
+.cue-main.fire-now { background-color: rgba(220, 40, 30, 0.92); color: rgb(255, 255, 255); font-size: 76px; }
+.cue-main.fire-now.blink { background-color: rgba(255, 170, 30, 0.95); color: rgb(20, 20, 20); }
+.cue-main.holding { background-color: rgba(230, 120, 20, 0.85); color: rgb(255, 255, 255); }
+.cue-main.early { background-color: rgba(200, 150, 20, 0.85); color: rgb(20, 20, 20); }
+.cue-main.touchdown { font-size: 50px; }
+.cue-speed {
+    font-size: 84px; -unity-font-style: bold; margin-top: 6px;
+    padding: 0 30px; border-radius: 14px; background-color: rgba(10, 14, 20, 0.66);
+}
+.cue-speed.good { color: rgb(110, 230, 120); }
+.cue-speed.warn { color: rgb(255, 190, 60); }
+.cue-speed.danger { color: rgb(255, 90, 80); }
+
+/* ---- result ---- */
+.result-tip { font-size: 26px; margin-top: 14px; color: rgb(255, 210, 60); max-width: 1100px; white-space: normal; -unity-text-align: middle-center; }
+.result-hint { font-size: 30px; margin-top: 22px; color: rgb(235, 240, 245); -unity-font-style: bold; }
+
+/* ---- start screen ---- */
+.intro { background-color: rgba(5, 8, 12, 0.55); }
+.intro-box {
+    background-color: rgba(10, 14, 20, 0.9);
+    border-radius: 16px; border-width: 2px; border-color: rgba(255, 255, 255, 0.2);
+    padding: 34px 64px; align-items: center;
+}
+.intro-title { font-size: 92px; -unity-font-style: bold; color: rgb(255, 210, 60); letter-spacing: 6px; }
+.intro-goal { font-size: 40px; -unity-font-style: bold; margin-top: 4px; }
+.intro-mode { font-size: 26px; color: rgb(110, 230, 120); margin-top: 10px; margin-bottom: 18px; }
+.intro-controls {
+    background-color: rgba(255, 255, 255, 0.06); border-radius: 10px;
+    padding: 14px 28px; width: 820px;
+}
+.intro-row { flex-direction: row; margin: 4px 0; }
+.intro-key { width: 300px; font-size: 32px; -unity-font-style: bold; color: rgb(255, 210, 60); }
+.intro-what { font-size: 32px; color: rgb(235, 240, 245); }
+.intro-tip { font-size: 28px; margin-top: 18px; color: rgb(235, 240, 245); }
+.intro-start { font-size: 34px; margin-top: 18px; -unity-font-style: bold; color: rgb(110, 230, 120); }
+.intro-start.dim { color: rgba(110, 230, 120, 0.35); }
+
+/* ---- wind (levels with wind) ---- */
+.wind { left: 210px; bottom: 64px; width: 130px; align-items: center; }
+.wind-dial {
+    width: 80px; height: 80px; border-radius: 40px; border-width: 2px;
+    border-color: rgba(255, 255, 255, 0.5); background-color: rgba(255, 255, 255, 0.05); margin: 4px 0;
+}
+.wind-arrow { position: absolute; left: 0; top: 0; width: 80px; height: 80px; transform-origin: 50% 50%; }
+.wind-shaft { position: absolute; left: 38px; top: 22px; width: 4px; height: 44px; background-color: rgb(140, 210, 255); border-radius: 2px; }
+.wind-head {
+    position: absolute; left: 30px; top: 14px; width: 20px; height: 20px;
+    border-top-width: 5px; border-left-width: 5px; border-color: rgb(140, 210, 255); rotate: 45deg;
+}
+.wind-speed { font-size: 24px; -unity-font-style: bold; color: rgb(140, 210, 255); }
+
+/* ---- level line on the start screen ---- */
+.intro-level { font-size: 34px; -unity-font-style: bold; color: rgb(140, 210, 255); margin-top: 2px; }
+.intro-briefing { font-size: 26px; color: rgb(235, 240, 245); margin-top: 2px; max-width: 900px; white-space: normal; -unity-text-align: middle-center; }
+.intro-levels { font-size: 22px; margin-top: 8px; color: rgb(160, 175, 190); }

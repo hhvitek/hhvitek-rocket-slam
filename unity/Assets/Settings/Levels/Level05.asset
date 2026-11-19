@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce007b8cc0b047db5b0a48ee3bf5bf92, type: 3}
+  m_Name: Level05
+  m_EditorClassIdentifier: RocketSlam::RocketSlam.Rocket.LevelConfig
+  number: 5
+  displayName: Night
+  briefing: Night, fog and gusty wind. Follow the deck lights and the SHIP marker.
+  conditions: Night, fog and strong gusts.
+  site: 1
+  fuelKg: 6000
+  startAltitude: 3000
+  startVerticalSpeed: -195
+  startOffset: {x: 40, y: 70}
+  startHorizontalVelocity: {x: 0, y: 0}
+  twoStarScore: 560
+  threeStarScore: 700
+  wind:
+    steady: {x: 5, y: -5}
+    gustStrength: 4.5
+    gustFrequency: 0.13
+    seed: 5
+  sea:
+    swellAmplitude: 0.7
+    swellPeriod: 9
+    swellDirection: 200
+    chopAmplitude: 0.3
+    seed: 5
+  timeOfDay: 1
+  fogDensity: 0.00034
+  skyRotation: 0

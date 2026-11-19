@@ -1,0 +1,88 @@
+# ---------- Unity project (unity/) ----------
+/unity/[Ll]ibrary/
+/unity/[Tt]emp/
+/unity/[Oo]bj/
+/unity/[Bb]uild/
+/unity/[Bb]uilds/
+/unity/[Ll]ogs/
+/unity/[Uu]ser[Ss]ettings/
+/unity/[Mm]emoryCaptures/
+/unity/[Rr]ecordings/
+/unity/Assets/Plugins/Editor/JetBrains*
+/unity/.vs/
+/unity/.idea/
+/unity/.vscode/
+/unity/*.csproj
+/unity/*.unityproj
+/unity/*.sln
+/unity/*.slnx
+/unity/*.suo
+/unity/*.user
+/unity/*.userprefs
+/unity/*.pidb
+/unity/*.booproj
+/unity/*.svd
+/unity/*.pdb
+/unity/*.mdb
+/unity/*.opendb
+/unity/*.VC.db
+/unity/*.pidb.meta
+/unity/*.pdb.meta
+/unity/*.mdb.meta
+/unity/sysinfo.txt
+/unity/crashlytics-build.properties
+/unity/Assets/StreamingAssets/aa.meta
+/unity/Assets/StreamingAssets/aa/*
+/unity/Assets/AddressableAssetsData/*/*.bin*
+/unity/Assets/SceneDependencyCache*
+/unity/ExportedObj/
+/unity/.consulo/
+/unity/.utmp/
+/unity/*.tmp
+# stray output when -testResults is given a repo-root path (it resolves relative to unity/)
+/unity/unity/
+
+# ---------- Builds and working output ----------
+/builds/
+/screenshots/
+# IL2CPP / Burst build side folders, wherever a build lands
+*_BackUpThisFolder_ButDontShipItWithYourGame/
+*_BurstDebugInformation_DoNotShip/
+# crash dumps
+*.dmp
+*.stackdump
+mono_crash*
+core
+*.apk
+*.aab
+*.unitypackage
+
+# ---------- Blender ----------
+*.blend1
+*.blend2
+__pycache__/
+*.pyc
+
+# ---------- Python tools ----------
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# ---------- Secrets (never commit) ----------
+.env
+.env.*
+*.pem
+*.key
+
+# ---------- Editors / OS ----------
+.idea/
+.vscode/
+*.swp
+*~
+.DS_Store
+Thumbs.db
+
+# ---------- Claude Code local settings ----------
+.claude/settings.local.json

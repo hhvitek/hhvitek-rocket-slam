@@ -1,0 +1,329 @@
+{
+  "model": "Booster.fbx",
+  "units": "metres; Unity coordinates (x right, y up, z forward), relative to the parent named",
+  "origin": "centre of the body's bottom face (Unity rocket root). Body y 0..40, radius 1.85; nozzle exit plane y -1.25",
+  "pose_in_file": "stowed, every rigged part has identity local rotation",
+  "deploy_rule": "localRotation = Quaternion.AngleAxis(deploy_angle_deg * t, deploy_axis_parent_space); axis = Vector3.Cross(Vector3.up, outward) swings the part's up towards outward",
+  "material": "single material 'Palette'; assign one URP Lit material with Assets/Textures/palette.png",
+  "legs": [
+    {
+      "name": "Leg_0",
+      "parent": "Booster",
+      "azimuth_deg": 45,
+      "pivot_local": [
+        1.3789,
+        2.0,
+        1.3789
+      ],
+      "outward": [
+        0.7071,
+        0.0,
+        0.7071
+      ],
+      "deploy_axis_parent_space": [
+        0.7071,
+        0.0,
+        -0.7071
+      ],
+      "deploy_angle_deg": 111.94,
+      "foot": {
+        "name": "Foot_0",
+        "parent_in_fbx": "Booster",
+        "pivot_local_stowed": [
+          1.8738,
+          10.9727,
+          1.8738
+        ],
+        "pivot_local_in_leg": [
+          0.495,
+          8.9727,
+          0.495
+        ],
+        "keep_level": "re-parent under the leg (worldPositionStays) then Foot.localRotation = Inverse(Leg.localRotation); or, kept under Booster: localPosition = Leg.localPosition + Leg.localRotation * pivot_local_in_leg, localRotation identity",
+        "pad_radius": 0.75,
+        "pad_thickness": 0.4,
+        "contact_local_offset": [
+          0,
+          -0.2,
+          0
+        ],
+        "deployed_centre_in_booster": [
+          7.079,
+          -2.002,
+          7.079
+        ],
+        "deployed_contact_in_booster": [
+          7.079,
+          -2.202,
+          7.079
+        ]
+      }
+    },
+    {
+      "name": "Leg_1",
+      "parent": "Booster",
+      "azimuth_deg": 135,
+      "pivot_local": [
+        -1.3789,
+        2.0,
+        1.3789
+      ],
+      "outward": [
+        -0.7071,
+        0.0,
+        0.7071
+      ],
+      "deploy_axis_parent_space": [
+        0.7071,
+        -0.0,
+        0.7071
+      ],
+      "deploy_angle_deg": 111.94,
+      "foot": {
+        "name": "Foot_1",
+        "parent_in_fbx": "Booster",
+        "pivot_local_stowed": [
+          -1.8738,
+          10.9727,
+          1.8738
+        ],
+        "pivot_local_in_leg": [
+          -0.495,
+          8.9727,
+          0.495
+        ],
+        "keep_level": "re-parent under the leg (worldPositionStays) then Foot.localRotation = Inverse(Leg.localRotation); or, kept under Booster: localPosition = Leg.localPosition + Leg.localRotation * pivot_local_in_leg, localRotation identity",
+        "pad_radius": 0.75,
+        "pad_thickness": 0.4,
+        "contact_local_offset": [
+          0,
+          -0.2,
+          0
+        ],
+        "deployed_centre_in_booster": [
+          -7.079,
+          -2.002,
+          7.079
+        ],
+        "deployed_contact_in_booster": [
+          -7.079,
+          -2.202,
+          7.079
+        ]
+      }
+    },
+    {
+      "name": "Leg_2",
+      "parent": "Booster",
+      "azimuth_deg": 225,
+      "pivot_local": [
+        -1.3789,
+        2.0,
+        -1.3789
+      ],
+      "outward": [
+        -0.7071,
+        0.0,
+        -0.7071
+      ],
+      "deploy_axis_parent_space": [
+        -0.7071,
+        0.0,
+        0.7071
+      ],
+      "deploy_angle_deg": 111.94,
+      "foot": {
+        "name": "Foot_2",
+        "parent_in_fbx": "Booster",
+        "pivot_local_stowed": [
+          -1.8738,
+          10.9727,
+          -1.8738
+        ],
+        "pivot_local_in_leg": [
+          -0.495,
+          8.9727,
+          -0.495
+        ],
+        "keep_level": "re-parent under the leg (worldPositionStays) then Foot.localRotation = Inverse(Leg.localRotation); or, kept under Booster: localPosition = Leg.localPosition + Leg.localRotation * pivot_local_in_leg, localRotation identity",
+        "pad_radius": 0.75,
+        "pad_thickness": 0.4,
+        "contact_local_offset": [
+          0,
+          -0.2,
+          0
+        ],
+        "deployed_centre_in_booster": [
+          -7.079,
+          -2.002,
+          -7.079
+        ],
+        "deployed_contact_in_booster": [
+          -7.079,
+          -2.202,
+          -7.079
+        ]
+      }
+    },
+    {
+      "name": "Leg_3",
+      "parent": "Booster",
+      "azimuth_deg": 315,
+      "pivot_local": [
+        1.3789,
+        2.0,
+        -1.3789
+      ],
+      "outward": [
+        0.7071,
+        0.0,
+        -0.7071
+      ],
+      "deploy_axis_parent_space": [
+        -0.7071,
+        0.0,
+        -0.7071
+      ],
+      "deploy_angle_deg": 111.94,
+      "foot": {
+        "name": "Foot_3",
+        "parent_in_fbx": "Booster",
+        "pivot_local_stowed": [
+          1.8738,
+          10.9727,
+          -1.8738
+        ],
+        "pivot_local_in_leg": [
+          0.495,
+          8.9727,
+          -0.495
+        ],
+        "keep_level": "re-parent under the leg (worldPositionStays) then Foot.localRotation = Inverse(Leg.localRotation); or, kept under Booster: localPosition = Leg.localPosition + Leg.localRotation * pivot_local_in_leg, localRotation identity",
+        "pad_radius": 0.75,
+        "pad_thickness": 0.4,
+        "contact_local_offset": [
+          0,
+          -0.2,
+          0
+        ],
+        "deployed_centre_in_booster": [
+          7.079,
+          -2.002,
+          -7.079
+        ],
+        "deployed_contact_in_booster": [
+          7.079,
+          -2.202,
+          -7.079
+        ]
+      }
+    }
+  ],
+  "grid_fins": [
+    {
+      "name": "GridFin_0",
+      "parent": "Booster",
+      "azimuth_deg": 0,
+      "pivot_local": [
+        1.95,
+        36.35,
+        -0.0
+      ],
+      "outward": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "deploy_axis_parent_space": [
+        0.0,
+        0.0,
+        -1.0
+      ],
+      "deploy_angle_deg": 90.0,
+      "size_m": {
+        "width": 1.4,
+        "span": 1.65,
+        "depth": 0.2
+      }
+    },
+    {
+      "name": "GridFin_1",
+      "parent": "Booster",
+      "azimuth_deg": 90,
+      "pivot_local": [
+        0.0,
+        36.35,
+        1.95
+      ],
+      "outward": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "deploy_axis_parent_space": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "deploy_angle_deg": 90.0,
+      "size_m": {
+        "width": 1.4,
+        "span": 1.65,
+        "depth": 0.2
+      }
+    },
+    {
+      "name": "GridFin_2",
+      "parent": "Booster",
+      "azimuth_deg": 180,
+      "pivot_local": [
+        -1.95,
+        36.35,
+        0.0
+      ],
+      "outward": [
+        -1.0,
+        0.0,
+        0.0
+      ],
+      "deploy_axis_parent_space": [
+        0.0,
+        -0.0,
+        1.0
+      ],
+      "deploy_angle_deg": 90.0,
+      "size_m": {
+        "width": 1.4,
+        "span": 1.65,
+        "depth": 0.2
+      }
+    },
+    {
+      "name": "GridFin_3",
+      "parent": "Booster",
+      "azimuth_deg": 270,
+      "pivot_local": [
+        -0.0,
+        36.35,
+        -1.95
+      ],
+      "outward": [
+        -0.0,
+        0.0,
+        -1.0
+      ],
+      "deploy_axis_parent_space": [
+        -1.0,
+        0.0,
+        0.0
+      ],
+      "deploy_angle_deg": 90.0,
+      "size_m": {
+        "width": 1.4,
+        "span": 1.65,
+        "depth": 0.2
+      }
+    }
+  ],
+  "game_config_note": "foot centres match RocketConfig legLength 9 / angle 116.4 deg; with this model use legDeployAngleDeg = 111.94 on the hinge (pad offset 0.7 m outward)"
+}

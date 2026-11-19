@@ -1,0 +1,123 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements">
+    <Style src="Hud.uss" />
+    <ui:VisualElement name="hud-root" class="root" picking-mode="Ignore">
+        <ui:VisualElement name="impact-marker" class="impact-marker" picking-mode="Ignore">
+            <ui:VisualElement class="impact-dot" />
+        </ui:VisualElement>
+        <ui:VisualElement name="pad-marker" class="pad-marker" picking-mode="Ignore">
+            <ui:VisualElement class="pad-ring" />
+            <ui:Label name="pad-marker-label" text="PAD" class="pad-label" />
+        </ui:VisualElement>
+        <ui:VisualElement name="pad-arrow" class="pad-arrow" picking-mode="Ignore">
+            <ui:VisualElement class="pad-chevron" />
+        </ui:VisualElement>
+        <ui:Label name="cam-name" text="CHASE CAM" class="cam-name" />
+        <ui:VisualElement name="telemetry" class="panel telemetry manual-only" picking-mode="Ignore">
+            <ui:Label text="TELEMETRY" class="panel-title" />
+            <ui:VisualElement class="row"><ui:Label text="RADAR ALT" class="key" /><ui:Label name="alt" text="0 m" class="value" /></ui:VisualElement>
+            <ui:VisualElement class="row"><ui:Label text="V. SPEED" class="key" /><ui:Label name="vspeed" text="0.0 m/s" class="value" /></ui:VisualElement>
+            <ui:VisualElement class="row"><ui:Label text="H. SPEED" class="key" /><ui:Label name="hspeed" text="0.0 m/s" class="value" /></ui:VisualElement>
+            <ui:VisualElement class="row"><ui:Label text="TILT" class="key" /><ui:Label name="tilt" text="0.0°" class="value" /></ui:VisualElement>
+            <ui:VisualElement class="row"><ui:Label text="LEGS" class="key" /><ui:Label name="legs" text="STOWED" class="value" /></ui:VisualElement>
+        </ui:VisualElement>
+
+        <ui:VisualElement name="engine-panel" class="panel engine manual-only" picking-mode="Ignore">
+            <ui:Label text="ENGINE" class="panel-title" />
+            <ui:Label name="engine-state" text="OFF" class="engine-state" />
+            <ui:VisualElement class="row"><ui:Label text="THROTTLE" class="key" /><ui:Label name="throttle" text="100 %" class="value" /></ui:VisualElement>
+            <ui:VisualElement class="bar"><ui:VisualElement name="throttle-fill" class="bar-fill throttle-fill" /></ui:VisualElement>
+            <ui:VisualElement class="row"><ui:Label text="FUEL" class="key" /><ui:Label name="fuel" text="0 kg" class="value" /></ui:VisualElement>
+            <ui:VisualElement class="bar"><ui:VisualElement name="fuel-fill" class="bar-fill fuel-fill" /></ui:VisualElement>
+        </ui:VisualElement>
+
+        <ui:VisualElement name="target-panel" class="panel target" picking-mode="Ignore">
+            <ui:Label text="TARGET" class="panel-title" />
+            <ui:VisualElement name="compass" class="compass">
+                <ui:VisualElement name="needle" class="needle" />
+                <ui:VisualElement class="compass-dot" />
+            </ui:VisualElement>
+            <ui:Label name="target-dist" text="0 m" class="target-dist" />
+        </ui:VisualElement>
+
+        <ui:VisualElement name="wind-panel" class="panel wind" picking-mode="Ignore">
+            <ui:Label text="WIND" class="panel-title" />
+            <ui:VisualElement class="wind-dial">
+                <ui:VisualElement name="wind-arrow" class="wind-arrow">
+                    <ui:VisualElement class="wind-shaft" />
+                    <ui:VisualElement class="wind-head" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+            <ui:Label name="wind-speed" text="0 m/s" class="wind-speed" />
+        </ui:VisualElement>
+
+        <ui:VisualElement name="steer-panel" class="panel steer manual-only" picking-mode="Ignore">
+            <ui:Label text="STEERING" class="panel-title" />
+            <ui:VisualElement name="steer-box" class="steer-box">
+                <ui:VisualElement class="steer-h" />
+                <ui:VisualElement class="steer-v" />
+                <ui:VisualElement name="steer-dot" class="steer-dot" />
+            </ui:VisualElement>
+            <ui:Label name="steer-source" text="RCS" class="steer-source" />
+        </ui:VisualElement>
+
+        <ui:Label name="help" class="help manual-only" text="SPACE engine on/off  ·  WASD / ARROWS steer  ·  SHIFT / CTRL throttle (Z full, X min)  ·  G legs  ·  C camera  ·  R restart  ·  ESC pause  ·  M easy mode" />
+
+        <ui:VisualElement name="easy-panel" class="panel easy-panel easy-only" picking-mode="Ignore">
+            <ui:Label text="ALTITUDE" class="big-key" />
+            <ui:Label name="easy-alt" text="0 m" class="big-value" />
+            <ui:Label text="FALL SPEED" class="big-key" />
+            <ui:Label name="easy-fall" text="0.0 m/s" class="huge-value" />
+            <ui:Label name="easy-fall-limit" text="land under 2.5 m/s" class="small-note" />
+            <ui:VisualElement class="row fuel-row"><ui:Label text="FUEL" class="big-key" /><ui:Label name="easy-fuel" text="100 %" class="big-key fuel-pct" /></ui:VisualElement>
+            <ui:VisualElement class="bar big-bar"><ui:VisualElement name="easy-fuel-fill" class="bar-fill fuel-fill" /></ui:VisualElement>
+        </ui:VisualElement>
+
+        <ui:VisualElement name="easy-controls" class="panel controls-box easy-only" picking-mode="Ignore">
+            <ui:Label text="CONTROLS" class="panel-title" />
+            <ui:VisualElement class="ctl-row"><ui:Label text="HOLD SPACE" class="ctl-key ctl-main" /><ui:Label text="fire engine" class="ctl ctl-main" /></ui:VisualElement>
+            <ui:VisualElement class="ctl-row"><ui:Label text="Release" class="ctl-key" /><ui:Label text="engine off" class="ctl" /></ui:VisualElement>
+            <ui:VisualElement class="ctl-row"><ui:Label text="Arrows" class="ctl-key" /><ui:Label text="nudge (optional)" class="ctl" /></ui:VisualElement>
+            <ui:VisualElement class="ctl-row"><ui:Label text="R" class="ctl-key" /><ui:Label text="restart" class="ctl" /></ui:VisualElement>
+            <ui:VisualElement class="ctl-row"><ui:Label text="C" class="ctl-key" /><ui:Label text="camera" class="ctl" /></ui:VisualElement>
+            <ui:VisualElement class="ctl-row"><ui:Label text="M" class="ctl-key" /><ui:Label text="manual mode" class="ctl" /></ui:VisualElement>
+            <ui:VisualElement class="ctl-row"><ui:Label text="Esc" class="ctl-key" /><ui:Label text="pause" class="ctl" /></ui:VisualElement>
+        </ui:VisualElement>
+
+        <ui:Label name="mode-pill" text="EASY MODE" class="mode-pill" />
+
+        <ui:VisualElement name="cue" class="cue" picking-mode="Ignore">
+            <ui:Label name="cue-main" text="FIRE IN 640 m" class="cue-main" />
+            <ui:Label name="cue-speed" text="" class="cue-speed" />
+            <ui:Label name="cue-sub" text="" class="cue-sub" />
+        </ui:VisualElement>
+
+        <ui:VisualElement name="intro" class="overlay intro" picking-mode="Ignore">
+            <ui:VisualElement class="intro-box">
+                <ui:Label text="ROCKET SLAM" class="intro-title" />
+                <ui:Label name="intro-level" text="LEVEL 1 / 5" class="intro-level" />
+                <ui:Label name="intro-briefing" text="" class="intro-briefing" />
+                <ui:Label text="Land softly on the yellow target." class="intro-goal" />
+                <ui:Label name="intro-mode" text="EASY MODE: the rocket steers itself. You only fire the engine." class="intro-mode" />
+                <ui:VisualElement name="intro-easy" class="intro-controls">
+                    <ui:VisualElement class="intro-row"><ui:Label text="HOLD SPACE" class="intro-key" /><ui:Label text="fire engine (slows your fall)" class="intro-what" /></ui:VisualElement>
+                    <ui:VisualElement class="intro-row"><ui:Label text="Release" class="intro-key" /><ui:Label text="engine off" class="intro-what" /></ui:VisualElement>
+                    <ui:VisualElement class="intro-row"><ui:Label text="R" class="intro-key" /><ui:Label text="restart" class="intro-what" /></ui:VisualElement>
+                    <ui:VisualElement class="intro-row"><ui:Label text="C" class="intro-key" /><ui:Label text="camera" class="intro-what" /></ui:VisualElement>
+                    <ui:VisualElement class="intro-row"><ui:Label text="M" class="intro-key" /><ui:Label text="manual mode (steer yourself)" class="intro-what" /></ui:VisualElement>
+                    <ui:VisualElement class="intro-row"><ui:Label text="Esc" class="intro-key" /><ui:Label text="pause" class="intro-what" /></ui:VisualElement>
+                </ui:VisualElement>
+                <ui:VisualElement name="intro-manual" class="intro-controls">
+                    <ui:VisualElement class="intro-row"><ui:Label text="SPACE" class="intro-key" /><ui:Label text="engine on / off" class="intro-what" /></ui:VisualElement>
+                    <ui:VisualElement class="intro-row"><ui:Label text="SHIFT / CTRL" class="intro-key" /><ui:Label text="throttle up / down (min 40 %)" class="intro-what" /></ui:VisualElement>
+                    <ui:VisualElement class="intro-row"><ui:Label text="WASD / Arrows" class="intro-key" /><ui:Label text="steer (tilt the rocket)" class="intro-what" /></ui:VisualElement>
+                    <ui:VisualElement class="intro-row"><ui:Label text="G" class="intro-key" /><ui:Label text="landing legs" class="intro-what" /></ui:VisualElement>
+                    <ui:VisualElement class="intro-row"><ui:Label text="R / C / Esc" class="intro-key" /><ui:Label text="restart / camera / pause" class="intro-what" /></ui:VisualElement>
+                    <ui:VisualElement class="intro-row"><ui:Label text="M" class="intro-key" /><ui:Label text="back to easy mode" class="intro-what" /></ui:VisualElement>
+                </ui:VisualElement>
+                <ui:Label text="Wait for FIRE NOW on screen, then hold SPACE." class="intro-tip" />
+                <ui:Label name="intro-start" text="Press any key to start" class="intro-start" />
+                <ui:Label name="intro-levels" text="Esc: main menu" class="intro-levels" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

@@ -1,0 +1,31 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements">
+    <Style src="Menu.uss" />
+    <ui:VisualElement name="settings-panel" class="settings-panel">
+        <ui:VisualElement class="settings-box">
+            <ui:Label text="SETTINGS" class="screen-title" />
+            <ui:VisualElement name="row-volume" class="setting-row">
+                <ui:Label text="MASTER VOLUME" class="setting-name" />
+                <ui:VisualElement class="setting-value">
+                    <ui:Slider name="volume-slider" low-value="0" high-value="100" value="80" class="volume-slider" />
+                    <ui:Label name="volume-value" text="80 %" class="volume-value" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+            <ui:VisualElement name="row-quality" class="setting-row">
+                <ui:Label text="GRAPHICS QUALITY" class="setting-name" />
+                <ui:VisualElement name="quality-chips" class="setting-value chips" />
+            </ui:VisualElement>
+            <ui:VisualElement name="row-assist" class="setting-row">
+                <ui:Label text="EASY ASSIST" class="setting-name" />
+                <ui:VisualElement name="assist-chips" class="setting-value chips" />
+            </ui:VisualElement>
+            <ui:VisualElement name="row-camera" class="setting-row">
+                <ui:Label text="DEFAULT CAMERA" class="setting-name" />
+                <ui:VisualElement name="camera-chips" class="setting-value chips" />
+            </ui:VisualElement>
+            <ui:Label name="settings-hint" text="" class="settings-hint" />
+            <ui:VisualElement name="settings-back" class="menu-button back-button">
+                <ui:Label text="BACK" class="menu-button-text" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

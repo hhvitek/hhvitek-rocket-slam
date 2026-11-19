@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00a8b395046ca044cb5424f80a597bc7, type: 3}
+  m_Name: RocketConfig
+  m_EditorClassIdentifier: RocketSlam::RocketSlam.Rocket.RocketConfig
+  dryMassKg: 22000
+  maxThrustN: 850000
+  minThrottle: 0.4
+  burnRateAtFullKgPerS: 280
+  throttleChangeRate: 0.6
+  gimbalMaxDeg: 5
+  bodyHeight: 40
+  bodyRadius: 1.85
+  centerOfMassHeight: 14
+  airDensity: 1.225
+  dragCoefficient: 0.95
+  dragAreaM2: 10.75
+  aeroStabilityArmM: 8
+  angularDamping: 1
+  legHingeHeight: 2
+  legHingeRadius: 1.95
+  legLength: 9
+  legDeployAngleDeg: 111.94
+  legDeployTime: 1.5
+  landing:
+    maxVerticalSpeed: 2.5
+    maxHorizontalSpeed: 1.5
+    maxTiltDeg: 6
+    tipOverTiltDeg: 25
+    settleTime: 3

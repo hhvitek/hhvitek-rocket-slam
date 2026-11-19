@@ -1,0 +1,80 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements">
+    <Style src="Menu.uss" />
+    <ui:VisualElement name="level-menus" class="menu-root level-menus" picking-mode="Ignore">
+        <ui:VisualElement name="results" class="screen results-screen">
+            <ui:VisualElement name="results-box" class="results-box">
+                <ui:VisualElement class="results-header">
+                    <ui:VisualElement class="results-heading">
+                        <ui:Label name="results-title" text="LANDED!" class="results-title" />
+                        <ui:Label name="results-reason" text="" class="results-reason" />
+                    </ui:VisualElement>
+                    <ui:Label name="results-level" text="LEVEL 1  ·  Ground pad" class="results-level" />
+                </ui:VisualElement>
+                <ui:Label name="results-tip" text="" class="results-tip" />
+                <ui:VisualElement class="results-body">
+                    <ui:VisualElement class="score-column">
+                        <ui:VisualElement name="score-fuel" class="score-row">
+                            <ui:Label text="FUEL LEFT" class="score-name" />
+                            <ui:Label name="score-fuel-detail" text="" class="score-detail" />
+                            <ui:Label name="score-fuel-value" text="0" class="score-value" />
+                        </ui:VisualElement>
+                        <ui:VisualElement class="score-bar"><ui:VisualElement name="score-fuel-fill" class="score-bar-fill" /></ui:VisualElement>
+                        <ui:VisualElement name="score-precision" class="score-row">
+                            <ui:Label text="PRECISION" class="score-name" />
+                            <ui:Label name="score-precision-detail" text="" class="score-detail" />
+                            <ui:Label name="score-precision-value" text="0" class="score-value" />
+                        </ui:VisualElement>
+                        <ui:VisualElement class="score-bar"><ui:VisualElement name="score-precision-fill" class="score-bar-fill" /></ui:VisualElement>
+                        <ui:VisualElement name="score-softness" class="score-row">
+                            <ui:Label text="SOFTNESS" class="score-name" />
+                            <ui:Label name="score-softness-detail" text="" class="score-detail" />
+                            <ui:Label name="score-softness-value" text="0" class="score-value" />
+                        </ui:VisualElement>
+                        <ui:VisualElement class="score-bar"><ui:VisualElement name="score-softness-fill" class="score-bar-fill" /></ui:VisualElement>
+                        <ui:VisualElement class="score-total-row">
+                            <ui:Label text="SCORE" class="score-total-name" />
+                            <ui:Label name="score-total" text="0" class="score-total" />
+                        </ui:VisualElement>
+                        <ui:VisualElement class="stars-row">
+                            <ui:VisualElement name="stars" class="stars" />
+                            <ui:Label name="new-best" text="NEW BEST!" class="new-best" />
+                        </ui:VisualElement>
+                        <ui:Label name="best-line" text="Best: 0" class="best-line" />
+                    </ui:VisualElement>
+                    <ui:VisualElement class="graph-column">
+                        <ui:VisualElement class="graph-head">
+                            <ui:Label text="TELEMETRY" class="graph-title" />
+                            <ui:VisualElement class="legend">
+                                <ui:VisualElement class="legend-item"><ui:VisualElement class="legend-swatch swatch-alt" /><ui:Label name="legend-alt" text="ALTITUDE" class="legend-text" /></ui:VisualElement>
+                                <ui:VisualElement class="legend-item"><ui:VisualElement class="legend-swatch swatch-fall" /><ui:Label name="legend-fall" text="FALL SPEED" class="legend-text" /></ui:VisualElement>
+                                <ui:VisualElement class="legend-item"><ui:VisualElement class="legend-swatch swatch-thrust" /><ui:Label name="legend-thrust" text="THRUST" class="legend-text" /></ui:VisualElement>
+                            </ui:VisualElement>
+                        </ui:VisualElement>
+                        <ui:VisualElement name="graph-host" class="graph-host" />
+                    </ui:VisualElement>
+                </ui:VisualElement>
+                <ui:VisualElement name="results-buttons" class="results-buttons">
+                    <ui:VisualElement name="btn-retry" class="menu-button row-button"><ui:Label text="RETRY" class="menu-button-text" /><ui:Label text="R" class="key-cap" /></ui:VisualElement>
+                    <ui:VisualElement name="btn-next" class="menu-button row-button"><ui:Label text="NEXT LEVEL" class="menu-button-text" /><ui:Label text="N" class="key-cap" /></ui:VisualElement>
+                    <ui:VisualElement name="btn-menu" class="menu-button row-button"><ui:Label text="MENU" class="menu-button-text" /><ui:Label text="Esc" class="key-cap" /></ui:VisualElement>
+                </ui:VisualElement>
+            </ui:VisualElement>
+        </ui:VisualElement>
+
+        <ui:VisualElement name="pause-menu" class="screen pause-screen">
+            <ui:VisualElement class="pause-box">
+                <ui:Label text="PAUSED" class="screen-title" />
+                <ui:Label name="pause-level" text="LEVEL 1  ·  Ground pad" class="pause-level" />
+                <ui:VisualElement class="menu-list">
+                    <ui:VisualElement name="btn-resume" class="menu-button"><ui:Label text="RESUME" class="menu-button-text" /></ui:VisualElement>
+                    <ui:VisualElement name="btn-restart" class="menu-button"><ui:Label text="RESTART" class="menu-button-text" /></ui:VisualElement>
+                    <ui:VisualElement name="btn-pause-settings" class="menu-button"><ui:Label text="SETTINGS" class="menu-button-text" /></ui:VisualElement>
+                    <ui:VisualElement name="btn-main-menu" class="menu-button"><ui:Label text="MAIN MENU" class="menu-button-text" /></ui:VisualElement>
+                </ui:VisualElement>
+                <ui:Label text="Esc resume  ·  R restart" class="menu-hint" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+
+        <ui:VisualElement name="settings-host" class="screen settings-host dimmed" />
+    </ui:VisualElement>
+</ui:UXML>
